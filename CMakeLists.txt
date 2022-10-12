@@ -32,12 +32,6 @@ if(Boost_FOUND)
   MESSAGE( STATUS "Boost_LIB_VERSION = ${Boost_LIB_VERSION}.")
 endif()
 
-find_package(Threads)
-find_package(OpenMP)
-if(OpenMP_CXX_FOUND)
-  target_link_libraries(${PROJECT_NAME} PUBLIC OpenMP::OpenMP_CXX)
-endif()
-
 target_link_libraries(${PROJECT_NAME} 
   PRIVATE fmt::fmt
   PRIVATE ${CMAKE_THREAD_LIBS_INIT}
